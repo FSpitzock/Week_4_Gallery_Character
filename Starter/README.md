@@ -49,8 +49,13 @@ This capstone project will challenge you to use all the DOM, events, and localSt
 - Use CSS to style your pages and cards for a polished look.
 - Test your app by adding, viewing, and updating multiple characters and their bags.
 
----
+![Screenshot 2025-06-07 184710](https://github.com/user-attachments/assets/a1613e51-4320-470f-96ba-68407eb4474b)
 
+
+
+![Screenshot 2025-06-07 184729](https://github.com/user-attachments/assets/9152f007-e658-41bb-a08e-9aa896d991a6)
+
+---
 ## Research
 
 - [MDN: Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
