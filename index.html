@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
-  <h1 class="header">Character Gallery</h1>
-  <main>
-  <form name="form1" id="form1">
-    Type: <select name="type" id="type">
-      <option value="" selected="selected">Choose Type</option>
-    </select>
-    </form>  
-  
-  </main>
-  <script src="./assets/gallery.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <main>
+    <h1 class="header">Character Gallery</h1>
+    
+      <form id="characterForm" autocomplete="off">
+        <label for="type">Type:</label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected hidden="">Choose Type</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Human">Human</option>
+        </select>
+        <br />
+        <br />
+        <label for="name">Name:</label>
+        <input type="text" id="name" required placeholder="Enter Name" />
+        <br />
+        <br />
+        <label for="description">Description:</label>
+        <input type="description" id="description" required placeholder="Describe your character"/>
+        <br />
+        <br />
+        <label for="name">Image URL:</label>
+        <input type="text" id="imgUrl" name="imgUrl" required placeholder="./assets/image/dragon.png" />
+        <br />
+        <br />
+        <button type="submit">Add Character</button>
+        <button type="clear">Clear</button>
+      </form>
+      <div id="dragonCard"></div>
+    </main>
+    <script src="./assets/gallery.js"></script>
+  </body>
 </html>

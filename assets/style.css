@@ -1,9 +1,46 @@
 body {
     background-color: rgb(44, 44, 44);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: gold;
 }
 
 .header {
     color: gold;
     
 }
+
+   .dragon-card {
+      background: #ffcc02;
+      color: #232323;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #00000033;
+      margin: 32px auto 0 auto;
+      max-width: 340px;
+      padding: 18px 18px 12px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+    }
+    .dragon-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      background: #fffcc0;
+      border: 2px solid #232323;
+    }
+    .dragon-card h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.3em;
+      letter-spacing: 1px;
+    }
+    .dragon-card .element {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .dragon-card .desc {
+      font-size: 1em;
+      margin-bottom: 4px;
+    }
