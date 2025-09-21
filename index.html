@@ -11,7 +11,7 @@
     
       <form id="characterForm" autocomplete="off">
         <label for="type">Type:</label>
-        <select id="type" name="type" required>
+        <select id="type" required>
           <option value="" disabled selected hidden="">Choose Type</option>
           <option value="Dragon">Dragon</option>
           <option value="Human">Human</option>
@@ -23,7 +23,7 @@
         <br />
         <br />
         <label for="description">Description:</label>
-        <input type="description" id="description" required placeholder="Describe your character"/>
+        <input type="text" id="description" required placeholder="Describe your character"/>
         <br />
         <br />
         <label for="name">Image URL:</label>
@@ -31,7 +31,6 @@
         <br />
         <br />
         <button type="submit">Add Character</button>
-        <button type="clear">Clear</button>
       </form>
       <div id="dragonCard"></div>
     </main>
