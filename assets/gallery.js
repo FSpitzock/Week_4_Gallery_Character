@@ -25,8 +25,11 @@ function renderGallery() {
       <h2>${dragon.name}</h2>
       <div class="type">Type: ${dragon.type}</div>
       <div class="description">${dragon.description}</div>
-      <button class="add-btn" data-idx="${idx}">Bag Items</button> 
-      <button class="remove-btn" data-idx="${idx}">Remove</button> `;// REMOVES INDIVIDUALLY BECAUSE IT'S WITHIN EACH CREATED CARD/DIV 
+    <button class="remove-btn" data-idx="${idx}">Remove</button> `;// REMOVES INDIVIDUALLY BECAUSE IT'S WITHIN EACH CREATED CARD/DIV 
+      card.addEventListener('click', () => {
+        sessionStorage.setItem('selectedCharacterIdx', idx);
+        window.location.href = './assets/detail.html';
+      });
       dragonCard.appendChild(card);
   });
   
@@ -44,22 +47,9 @@ function renderGallery() {
     });
   });
 
-//Click and hover 
-const addBtn = dragonCard.querySelectorAll('.add-btn');
-addBtn.forEach(btn => {
-btn.addEventListener('click', function() {
-    const imageUrl = parseInt(this.getAttribute('data-idx'));
-    const dragons = getDragons();
-     saveDragons(dragons); // RE-USABLE
-      renderGallery();
-      form.reset();
-      localStorage.setItem('selectedImageURL', imageUrl);
- window.location.href = './assets/detail.html';
-});
-}); console.log(addBtn)
 
 // hover
-const hoverBox = document.getElementById('dragonCard');
+const hoverBox = document.getElementById('dragons');
 hoverBox.addEventListener('mouseover', function() {
   hoverBox.style.background = "#ffcc02";
   hoverBox.style.color="#232323";
@@ -89,19 +79,3 @@ form.addEventListener('submit', function(e) {
 // On page load, render the gallery
 renderGallery();
 console.log(renderGallery);
-
-
-
-
-//JS for detail.html page
-/*const bag = document.getElementById('bag')
-const itemType = document.getElementById(itemType).value;
-const itemName = document.getElementById(itemName).value;
-
-
-  insertBtn.addEventListener('click', () => {
-  const li = document.createElement('li');
-  li.textContent = "Golden Dragon";
-  // insertBefore(newNode, referenceNode)
-  bag.insertBefore(li, bag.firstElementChild);
-});*/
