@@ -3,12 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="./style.css"">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
       <main>
     <h1>Character Detail</h1>
+    
+<div id="imageContainer"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const imageUrl = localStorage.getItem('selectedImageUrl');
+
+            if (imageUrl) {
+                const decodedImageUrl = decodeURIComponent(imageUrl);
+                const imgElement = document.createElement('img');
+                imgElement.src = decodedImageUrl;
+                imgElement.alt = 'Displayed Image';
+                document.getElementById('imageContainer').appendChild(imgElement);
+            } else {
+                document.getElementById('imageContainer').innerHTML = '<p>No image URL provided.</p>';
+            }
+        });
+    </script>
+    
+   
+<label for="bag"><h3>Bag</h3></label>
+<ul id="bag"></ul>
+<li></li>
+<li></li>
+<li></li>
+<label for="itemType">Item Type:</label>
+        <select id="itemType" required>
+          <option value="" disabled selected hidden="">Choose Type</option>
+          <option value="rune">Rune</option>
+          <option value="weapon">Weapon</option>
+          <option value="potion">Potion</option>
+        </select> <br><br>
+<label for="itemName">Item Name:</label>
+<input type="text" id="itemName" required placeholder="e.g. Power Sword"> <br><br>
+<button id="insertBtn">Add Item to Character Bag</button>
+
   </main>
-  <script src="./assets/gallery.js"></script>
+  <script src="./gallery.js"></script>
 </body>
 </html>
