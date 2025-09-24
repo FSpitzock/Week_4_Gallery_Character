@@ -24,32 +24,18 @@ function renderGallery() {
       <img src="${dragon.imgUrl}" alt="${dragon.name}" />
       <h2>${dragon.name}</h2>
       <div class="type">Type: ${dragon.type}</div>
-      <div class="description">${dragon.description}</div>
-    <button class="remove-btn" data-idx="${idx}">Remove</button> `;// REMOVES INDIVIDUALLY BECAUSE IT'S WITHIN EACH CREATED CARD/DIV 
-      card.addEventListener('click', () => {
+      <div class="description">${dragon.description}</div>`
+         card.addEventListener('click', () => {
         sessionStorage.setItem('selectedCharacterIdx', idx);
         window.location.href = './assets/detail.html';
       });
       dragonCard.appendChild(card);
+       
   });
   
 
-    // Add event listeners for remove buttons
-  const removeBtns = dragonCard.querySelectorAll('.remove-btn');
-  removeBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const idx = parseInt(this.getAttribute('data-idx'));
-      const dragons = getDragons();
-      dragons.splice(idx, 1); // REMOVES IT FROM THE DATABASE
-      saveDragons(dragons); // RE-USABLE
-      renderGallery();
-      form.reset();
-    });
-  });
-
-
 // hover
-const hoverBox = document.getElementById('dragons');
+const hoverBox = document.getElementById('dragonCard');
 hoverBox.addEventListener('mouseover', function() {
   hoverBox.style.background = "#ffcc02";
   hoverBox.style.color="#232323";
